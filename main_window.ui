@@ -1,0 +1,2041 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1023</width>
+    <height>893</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>豆瓣电影简易工具</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLineEdit" name="search_line">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit
+{
+
+    border: 2px solid rgb(99, 99, 99);
+font: 10pt&quot;黑体&quot;;
+
+	background-color: rgb(247, 255, 244);
+
+border - radius: 6px;
+
+}
+
+
+QLineEdit::hover
+{
+	background - color: green;
+    color: green
+    border - color: rgb(50, 480, 40);
+
+}
+
+
+QLineEdit::disabled
+{
+
+}
+
+</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="search_button">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+font: 10pt &quot;黑体&quot;;
+border-radius:6px;
+color: white;
+padding: 5px 32px;
+text-align: center;
+text-decoration: none;
+margin: 4px 2px;
+background-color: white;
+color: black;
+border: 2px solid #008cba;
+}
+QPushButton:hover {
+background-color: #008cba;
+color: white;
+}
+QPushButton:pressed {
+background-color: #06AD56;
+}
+
+
+</string>
+       </property>
+       <property name="text">
+        <string>搜索</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0">
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="page_1">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="label_11">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="instruct_text1">
+         <property name="styleSheet">
+          <string notr="true">font: 75 40pt &quot;Agency FB&quot;;</string>
+         </property>
+         <property name="text">
+          <string>搜点电影吧👆</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_10">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="styleSheet">
+          <string notr="true">font: 11pt &quot;黑体&quot;;
+text-decoration: underline;
+</string>
+         </property>
+         <property name="text">
+          <string>这个没啥用的程序由杭州电子科技大学管理学院大一新生-陈笛编写</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_2">
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QListView" name="movie_select_list">
+           <property name="styleSheet">
+            <string notr="true">font: 16pt &quot;黑体&quot;;
+border-color: rgb(155, 157, 255);
+text-decoration: underline;
+border: 2px solid rgb(155, 157, 255);</string>
+           </property>
+           <property name="editTriggers">
+            <set>QAbstractItemView::EditKeyPressed</set>
+           </property>
+           <property name="viewMode">
+            <enum>QListView::ListMode</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="instruct_text2">
+           <property name="styleSheet">
+            <string notr="true">font: 18pt &quot;黑体&quot;;</string>
+           </property>
+           <property name="text">
+            <string>双击选择一部你感兴趣的电影吧🧐</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="label_6">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>135</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>135</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QComboBox" name="choice_rank_type_list">
+             <property name="styleSheet">
+              <string notr="true">QComboBox {
+	
+	
+	background-color: rgb(235, 240, 255);
+    border: 2px solid gray;
+    border-radius: 3px;
+    padding: 1px 2px 1px 2px;  
+	font: 14pt &quot;黑体&quot;;
+    min-width: 9em;  
+}
+
+
+
+
+</string>
+             </property>
+             <property name="maxVisibleItems">
+              <number>31</number>
+             </property>
+             <item>
+              <property name="text">
+               <string>【实时榜单】：</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>新片榜</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>一周口碑榜</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>北美票房榜</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>【分类排行榜】：</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>剧情</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>喜剧</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>动作</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>爱情</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>科幻</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>动画</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>悬疑</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>惊悚</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>恐怖</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>纪录片</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>短片</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>情色</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>同性</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>音乐</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>歌舞</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>家庭</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>儿童</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>传记</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>历史</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>战争</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>犯罪</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>西部</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>奇幻</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>冒险</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>灾难</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>武侠</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>古装</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>运动</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>黑色电影</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="styleSheet">
+              <string notr="true">font: 16pt &quot;黑体&quot;;
+</string>
+             </property>
+             <property name="text">
+              <string>可以在这选择一个排行榜👆</string>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="maximumSize">
+              <size>
+               <width>111111</width>
+               <height>42</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 14pt &quot;黑体&quot;;
+border-right-color: rgb(7, 7, 7);
+background-color: rgb(255, 248, 230);</string>
+             </property>
+             <property name="text">
+              <string>排名开始位置</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="choice_rank_start">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="tabletTracking">
+              <bool>false</bool>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::ClickFocus</enum>
+             </property>
+             <property name="contextMenuPolicy">
+              <enum>Qt::DefaultContextMenu</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 14pt &quot;黑体&quot;;
+border-radius:6px;
+color: white;
+padding: 5px 32px;
+text-align: center;
+text-decoration: none;
+margin: 4px 2px;
+background-color: white;
+color: black;
+border: 2px solid #008cba;</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="buttonSymbols">
+              <enum>QAbstractSpinBox::UpDownArrows</enum>
+             </property>
+             <property name="keyboardTracking">
+              <bool>true</bool>
+             </property>
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>9999999</number>
+             </property>
+             <property name="stepType">
+              <enum>QAbstractSpinBox::DefaultStepType</enum>
+             </property>
+             <property name="value">
+              <number>1</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_4">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>42</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>111111</width>
+               <height>42</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 14pt &quot;黑体&quot;;
+background-color: rgb(255, 248, 230);</string>
+             </property>
+             <property name="text">
+              <string>电影数(64MAX)</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="choice_rank_finish">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 14pt &quot;黑体&quot;;
+border-radius:6px;
+color: white;
+padding: 5px 32px;
+text-align: center;
+text-decoration: none;
+margin: 4px 2px;
+background-color: white;
+color: black;
+border: 2px solid #008cba;</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="maximum">
+              <number>64</number>
+             </property>
+             <property name="value">
+              <number>20</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="apply_rank_set_button">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+font: 12pt &quot;黑体&quot;;
+border-radius:6px;
+color: white;
+padding: 5px 32px;
+text-align: center;
+text-decoration: none;
+margin: 4px 2px;
+background-color: white;
+color: black;
+border: 2px solid #008cba;
+}
+QPushButton:hover {
+background-color: #008cba;
+color: white;
+}
+QPushButton:pressed {
+background-color: #06AD56;
+}
+QPushButton:disabled{
+color: rgb(113, 113, 113);
+background-color: rgb(212, 217, 220);
+}</string>
+             </property>
+             <property name="text">
+              <string>应用设置</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <item>
+              <widget class="QPushButton" name="show_back_button">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+font: 12pt &quot;黑体&quot;;
+border-radius:6px;
+color: white;
+padding: 5px 32px;
+text-align: center;
+text-decoration: none;
+margin: 4px 2px;
+background-color: white;
+color: black;
+border: 2px solid #008cba;
+}
+QPushButton:hover {
+background-color: #008cba;
+color: white;
+}
+QPushButton:pressed {
+background-color: #06AD56;
+}
+QPushButton:disabled{
+	color: rgb(113, 113, 113);
+background-color: rgb(212, 217, 220);
+}</string>
+               </property>
+               <property name="text">
+                <string>上一页</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="show_next_button">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+font: 12pt &quot;黑体&quot;;
+border-radius:6px;
+color: white;
+padding: 5px 32px;
+text-align: center;
+text-decoration: none;
+margin: 4px 2px;
+background-color: white;
+color: black;
+border: 2px solid #008cba;
+}
+QPushButton:hover {
+background-color: #008cba;
+color: white;
+}
+QPushButton:pressed {
+background-color: #06AD56;
+}
+QPushButton:disabled{
+color: rgb(113, 113, 113);
+background-color: rgb(212, 217, 220);
+}</string>
+               </property>
+               <property name="text">
+                <string>下一页</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_5">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>400</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>400</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_3">
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="0" column="0" colspan="4">
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <widget class="QPushButton" name="back_to_page2_button">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+font: 10pt &quot;黑体&quot;;
+border-radius:6px;
+color: white;
+padding: 5px 32px;
+text-align: center;
+text-decoration: none;
+margin: 4px 2px;
+background-color: white;
+color: black;
+border: 2px solid #008cba;
+}
+QPushButton:hover {
+background-color: #008cba;
+color: white;
+}
+QPushButton:pressed {
+background-color: #06AD56;
+}</string>
+           </property>
+           <property name="text">
+            <string>返回</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="movie_name">
+           <property name="styleSheet">
+            <string notr="true">
+
+font: 24pt &quot;黑体&quot;;
+</string>
+           </property>
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0" colspan="3">
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="0" column="0">
+          <widget class="QLabel" name="movie_image">
+           <property name="minimumSize">
+            <size>
+             <width>230</width>
+             <height>270</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="movie_info_cmts">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>225</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 17pt &quot;黑体&quot;;</string>
+           </property>
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QPushButton" name="watch_video_button">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+font: 14pt &quot;黑体&quot;;
+border-radius:6px;
+color: white;
+padding: 5px 32px;
+text-align: center;
+text-decoration: none;
+margin: 4px 2px;
+background-color: white;
+color: black;
+border: 2px solid #008cba;
+}
+QPushButton:hover {
+background-color: #008cba;
+color: white;
+}
+QPushButton:pressed {
+background-color: #06AD56;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>观看预告片</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QPushButton" name="cmts_rate_button">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+font: 14pt &quot;黑体&quot;;
+border-radius:6px;
+color: white;
+padding: 5px 32px;
+text-align: center;
+text-decoration: none;
+margin: 4px 2px;
+background-color: white;
+color: black;
+border: 2px solid #008cba;
+}
+QPushButton:hover {
+background-color: #008cba;
+color: white;
+}
+QPushButton:pressed {
+background-color: #06AD56;
+}
+QPushButton:disabled{
+color: rgb(113, 113, 113);
+background-color: rgb(212, 217, 220);
+}</string>
+           </property>
+           <property name="text">
+            <string>评价星级可视化</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QPushButton" name="see_cmts_button">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+font: 14pt &quot;黑体&quot;;
+border-radius:6px;
+color: white;
+padding: 5px 32px;
+text-align: center;
+text-decoration: none;
+margin: 4px 2px;
+background-color: white;
+color: black;
+border: 2px solid #008cba;
+}
+QPushButton:hover {
+background-color: #008cba;
+color: white;
+}
+QPushButton:pressed {
+background-color: #06AD56;
+}
+QPushButton:disabled{
+color: rgb(113, 113, 113);
+background-color: rgb(212, 217, 220);
+}</string>
+           </property>
+           <property name="text">
+            <string>查看短评</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QPushButton" name="open_in_browser_button">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+font: 14pt &quot;黑体&quot;;
+border-radius:6px;
+color: white;
+padding: 5px 32px;
+text-align: center;
+text-decoration: none;
+margin: 4px 2px;
+background-color: white;
+color: black;
+border: 2px solid #008cba;
+}
+QPushButton:hover {
+background-color: #008cba;
+color: white;
+}
+QPushButton:pressed {
+background-color: #06AD56;
+}</string>
+           </property>
+           <property name="text">
+            <string>在浏览器中打开</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0" colspan="2">
+          <widget class="QComboBox" name="word_cloud_box">
+           <property name="styleSheet">
+            <string notr="true">QComboBox{font: 14pt &quot;黑体&quot;;
+border-radius:6px;
+color: white;
+padding: 5px 32px;
+text-align: center;
+text-decoration: none;
+margin: 4px 2px;
+background-color: white;
+color: black;
+border: 2px solid #008cba;}
+QComboBox:disabled{
+color: rgb(113, 113, 113);
+background-color: rgb(212, 217, 220);}</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>词云分析</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>默认版(默认处理)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>自定义版(额外处理)</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="3" rowspan="4">
+        <widget class="QTextBrowser" name="movie_info_main">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 248, 255);
+font: 14pt &quot;黑体&quot;;
+border: 2px solid rgb(155, 157, 255);
+</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="3">
+        <widget class="QLabel" name="label_7">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>100</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" colspan="3">
+        <widget class="QLineEdit" name="user_words_add_line">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>45</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: 2px solid rgb(99, 99, 99);
+font: 14pt&quot;黑体&quot;;
+background-color: rgb(247, 255, 244);
+border - radius: 6px;</string>
+         </property>
+         <property name="text">
+          <string>请在此处添加不显示的词语</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QPushButton" name="clear_user_words_button">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+font: 10pt &quot;黑体&quot;;
+border-radius:6px;
+color: white;
+padding: 5px 32px;
+text-align: center;
+text-decoration: none;
+margin: 4px 2px;
+background-color: white;
+color: black;
+border: 2px solid #008cba;
+}
+QPushButton:hover {
+background-color: #008cba;
+color: white;
+}
+QPushButton:pressed {
+background-color: #06AD56;
+}</string>
+         </property>
+         <property name="text">
+          <string>清除已添加</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QPushButton" name="add_button">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+font: 10pt &quot;黑体&quot;;
+border-radius:6px;
+color: white;
+padding: 5px 32px;
+text-align: center;
+text-decoration: none;
+margin: 4px 2px;
+background-color: white;
+color: black;
+border: 2px solid #008cba;
+}
+QPushButton:hover {
+background-color: #008cba;
+color: white;
+}
+QPushButton:pressed {
+background-color: #06AD56;
+}</string>
+         </property>
+         <property name="text">
+          <string>添加</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QPushButton" name="add_finish_button">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+font: 10pt &quot;黑体&quot;;
+border-radius:6px;
+color: white;
+padding: 5px 32px;
+text-align: center;
+text-decoration: none;
+margin: 4px 2px;
+background-color: white;
+color: black;
+border: 2px solid #008cba;
+}
+QPushButton:hover {
+background-color: #008cba;
+color: white;
+}
+QPushButton:pressed {
+background-color: #06AD56;
+}</string>
+         </property>
+         <property name="text">
+          <string>结束添加</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0" colspan="4">
+        <widget class="QProgressBar" name="progress_bar">
+         <property name="value">
+          <number>0</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_4">
+      <layout class="QGridLayout" name="gridLayout_8">
+       <item row="0" column="0">
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <item>
+          <widget class="QPushButton" name="back_to_page3_button">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+font: 10pt &quot;黑体&quot;;
+border-radius:6px;
+color: white;
+padding: 5px 32px;
+text-align: center;
+text-decoration: none;
+margin: 4px 2px;
+background-color: white;
+color: black;
+border: 2px solid #008cba;
+}
+QPushButton:hover {
+background-color: #008cba;
+color: white;
+}
+QPushButton:pressed {
+background-color: #06AD56;
+}</string>
+           </property>
+           <property name="text">
+            <string>返回</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="word_cloud_img">
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_5">
+      <layout class="QGridLayout" name="gridLayout_10">
+       <item row="0" column="0">
+        <layout class="QGridLayout" name="gridLayout_9">
+         <item row="0" column="0">
+          <widget class="QPushButton" name="back_to_page4_button">
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+font: 10pt &quot;黑体&quot;;
+border-radius:6px;
+color: white;
+padding: 5px 32px;
+text-align: center;
+text-decoration: none;
+margin: 4px 2px;
+background-color: white;
+color: black;
+border: 2px solid #008cba;
+}
+QPushButton:hover {
+background-color: #008cba;
+color: white;
+}
+QPushButton:pressed {
+background-color: #06AD56;
+}</string>
+           </property>
+           <property name="text">
+            <string>返回</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QGroupBox" name="groupBox">
+           <property name="title">
+            <string/>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_15">
+            <item row="0" column="0">
+             <layout class="QGridLayout" name="mpl_img"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QComboBox" name="choice_mpl_style">
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QComboBox {
+	background-color: rgb(251, 248, 255);
+    border: 2px solid gray;
+    border-radius: 3px;
+    padding: 1px 2px 1px 2px;  
+	font: 14pt &quot;黑体&quot;;
+    min-width: 9em;  
+}</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>折线图(默认)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>散点图</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>柱状图</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>饼状图</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_6">
+      <layout class="QGridLayout" name="gridLayout_6">
+       <item row="1" column="1" colspan="2">
+        <widget class="QPushButton" name="back_button">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+font: 10pt &quot;黑体&quot;;
+border-radius:6px;
+color: white;
+padding: 5px 32px;
+text-align: center;
+text-decoration: none;
+margin: 4px 2px;
+background-color: white;
+color: black;
+border: 2px solid #008cba;
+}
+QPushButton:hover {
+background-color: #008cba;
+color: white;
+}
+QPushButton:pressed {
+background-color: #06AD56;
+}</string>
+         </property>
+         <property name="text">
+          <string>上一页</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0" colspan="2">
+        <widget class="QLabel" name="label_9">
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 14pt &quot;黑体&quot;;</string>
+         </property>
+         <property name="text">
+          <string>选择一页</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2" colspan="2">
+        <widget class="QSpinBox" name="which_page_button">
+         <property name="styleSheet">
+          <string notr="true">font: 10pt &quot;黑体&quot;;
+border-radius:6px;
+color: white;
+padding: 5px 32px;
+text-align: center;
+text-decoration: none;
+margin: 4px 2px;
+background-color: white;
+color: black;
+border: 2px solid #008cba;</string>
+         </property>
+         <property name="minimum">
+          <number>1</number>
+         </property>
+         <property name="maximum">
+          <number>256</number>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="4">
+        <widget class="QTextBrowser" name="cmts_box">
+         <property name="styleSheet">
+          <string notr="true">font: 12pt &quot;黑体&quot;;
+background-color: rgb(246, 252, 255);
+border: 2px solid rgb(155, 157, 255);</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" colspan="4">
+        <widget class="QPushButton" name="go_page3_button">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+font: 10pt &quot;黑体&quot;;
+border-radius:6px;
+color: white;
+padding: 5px 32px;
+text-align: center;
+text-decoration: none;
+margin: 4px 2px;
+background-color: white;
+color: black;
+border: 2px solid #008cba;
+}
+QPushButton:hover {
+background-color: #008cba;
+color: white;
+}
+QPushButton:pressed {
+background-color: #06AD56;
+}</string>
+         </property>
+         <property name="text">
+          <string>返回</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_13">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QLabel" name="label_12">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1" colspan="2">
+        <widget class="QPushButton" name="next_button">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+font: 10pt &quot;黑体&quot;;
+border-radius:6px;
+color: white;
+padding: 5px 32px;
+text-align: center;
+text-decoration: none;
+margin: 4px 2px;
+background-color: white;
+color: black;
+border: 2px solid #008cba;
+}
+QPushButton:hover {
+background-color: #008cba;
+color: white;
+}
+QPushButton:pressed {
+background-color: #06AD56;
+}</string>
+         </property>
+         <property name="text">
+          <string>下一页</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="3">
+        <widget class="QLabel" name="label_14">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_7">
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="0" column="0" colspan="3">
+        <layout class="QVBoxLayout" name="verticalLayout_7">
+         <item>
+          <widget class="QPushButton" name="back_video_to_page3_button">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+font: 10pt &quot;黑体&quot;;
+border-radius:6px;
+color: white;
+padding: 5px 32px;
+text-align: center;
+text-decoration: none;
+margin: 4px 2px;
+background-color: white;
+color: black;
+border: 2px solid #008cba;
+}
+QPushButton:hover {
+background-color: #008cba;
+color: white;
+}
+QPushButton:pressed {
+background-color: #06AD56;
+}</string>
+           </property>
+           <property name="text">
+            <string>返回</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="choice_pre_video_button">
+           <property name="styleSheet">
+            <string notr="true">QComboBox {
+	background-color: rgb(251, 248, 255);
+    border: 2px solid gray;
+    border-radius: 3px;
+    padding: 1px 2px 1px 2px;  
+	font: 14pt &quot;黑体&quot;;
+    min-width: 9em;  
+}</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>选择一部预告</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QVideoWidget" name="player_window" native="true">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(83, 83, 83);</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="pause_button">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+font: 14pt &quot;黑体&quot;;
+border-radius:6px;
+color: white;
+padding: 5px 32px;
+text-align: center;
+text-decoration: none;
+margin: 4px 2px;
+background-color: white;
+color: black;
+border: 2px solid #008cba;
+}
+QPushButton:hover {
+background-color: #008cba;
+color: white;
+}
+QPushButton:pressed {
+background-color: #06AD56;
+}
+QPushButton:disabled{
+color: rgb(113, 113, 113);
+background-color: rgb(212, 217, 220);
+}</string>
+         </property>
+         <property name="text">
+          <string>暂停</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="play_button">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+font: 14pt &quot;黑体&quot;;
+border-radius:6px;
+color: white;
+padding: 5px 32px;
+text-align: center;
+text-decoration: none;
+margin: 4px 2px;
+background-color: white;
+color: black;
+border: 2px solid #008cba;
+}
+QPushButton:hover {
+background-color: #008cba;
+color: white;
+}
+QPushButton:pressed {
+background-color: #06AD56;
+}
+QPushButton:disabled{
+color: rgb(113, 113, 113);
+background-color: rgb(212, 217, 220);
+}</string>
+         </property>
+         <property name="text">
+          <string>播放</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QPushButton" name="continue_button">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+font: 14pt &quot;黑体&quot;;
+border-radius:6px;
+color: white;
+padding: 5px 32px;
+text-align: center;
+text-decoration: none;
+margin: 4px 2px;
+background-color: white;
+color: black;
+border: 2px solid #008cba;
+}
+QPushButton:hover {
+background-color: #008cba;
+color: white;
+}
+QPushButton:pressed {
+background-color: #06AD56;
+}
+QPushButton:disabled{
+color: rgb(113, 113, 113);
+background-color: rgb(212, 217, 220);
+}</string>
+         </property>
+         <property name="text">
+          <string>继续</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QVideoWidget</class>
+   <extends>QWidget</extends>
+   <header>PyQt5.QtMultimediaWidgets</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>search_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>go_page2_search()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1010</x>
+     <y>50</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>425</x>
+     <y>78</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>movie_select_list</sender>
+   <signal>doubleClicked(QModelIndex)</signal>
+   <receiver>Form</receiver>
+   <slot>go_page3_movie_analyze()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>127</x>
+     <y>235</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>97</x>
+     <y>127</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>back_to_page2_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>go_current_page2()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>110</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>750</x>
+     <y>63</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>back_to_page3_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>back_wordcloud_to_page3()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>98</x>
+     <y>70</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>984</x>
+     <y>53</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cmts_rate_button</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>Form</receiver>
+   <slot>cmts_rate_show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>499</x>
+     <y>528</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>22</x>
+     <y>38</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>back_to_page4_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>back_mpl_to_page3()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>98</x>
+     <y>70</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>776</x>
+     <y>23</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>choice_mpl_style</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>Form</receiver>
+   <slot>cmts_rate_show_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>175</x>
+     <y>80</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>39</x>
+     <y>18</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>search_line</sender>
+   <signal>returnPressed()</signal>
+   <receiver>Form</receiver>
+   <slot>go_page2_search()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>549</x>
+     <y>29</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>560</x>
+     <y>18</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>choice_rank_type_list</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>Form</receiver>
+   <slot>set_choice_rank()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>792</x>
+     <y>86</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>977</x>
+     <y>77</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>see_cmts_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>set_short_cmts()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>156</x>
+     <y>580</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>31</x>
+     <y>836</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>back_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>previous_cmts_page()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>78</x>
+     <y>73</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>18</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>next_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>next_cmts_page()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>78</x>
+     <y>80</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>144</x>
+     <y>74</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>which_page_button</sender>
+   <signal>editingFinished()</signal>
+   <receiver>Form</receiver>
+   <slot>choice_cmts_page()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>99</x>
+     <y>84</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>289</x>
+     <y>76</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>go_page3_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>back_cmts_to_page3()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>99</x>
+     <y>69</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>981</x>
+     <y>31</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>open_in_browser_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>open_in_browser()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>499</x>
+     <y>580</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>233</x>
+     <y>837</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>apply_rank_set_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>set_choice_rank()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>998</x>
+     <y>414</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>752</x>
+     <y>839</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>show_next_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>set_choice_rank_next()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>997</x>
+     <y>460</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>936</x>
+     <y>841</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>show_back_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>set_choice_rank_back()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>855</x>
+     <y>460</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>550</x>
+     <y>839</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>play_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>pre_video_play()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>71</x>
+     <y>77</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>416</x>
+     <y>835</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>watch_video_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>go_page7_pre_video_show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>156</x>
+     <y>528</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>182</x>
+     <y>834</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>choice_pre_video_button</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>Form</receiver>
+   <slot>choice_pre_video()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>237</x>
+     <y>74</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>571</x>
+     <y>837</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>back_video_to_page3_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>back_video_to_page3()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>98</x>
+     <y>70</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>968</x>
+     <y>22</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pause_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>pre_video_pause()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>43</x>
+     <y>77</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>447</x>
+     <y>885</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>continue_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>pre_video_continue()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>99</x>
+     <y>77</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>682</x>
+     <y>890</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>word_cloud_box</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>Form</receiver>
+   <slot>word_cloud_choice()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>236</x>
+     <y>634</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>8</x>
+     <y>573</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>user_words_add_line</sender>
+   <signal>returnPressed()</signal>
+   <receiver>Form</receiver>
+   <slot>add_user_words()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>345</x>
+     <y>771</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>6</x>
+     <y>716</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>add_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>add_user_words()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>251</x>
+     <y>817</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>780</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>add_finish_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>finish_user_words()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>414</x>
+     <y>823</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>759</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear_user_words_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>clear_user_words()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>75</x>
+     <y>812</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>27</x>
+     <y>886</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>go_page2_search()</slot>
+  <slot>go_page3_movie_analyze()</slot>
+  <slot>go_current_page2()</slot>
+  <slot>word_cloud()</slot>
+  <slot>back_wordcloud_to_page3()</slot>
+  <slot>cmts_rate_show()</slot>
+  <slot>cmts_rate_show_changed()</slot>
+  <slot>set_choice_rank()</slot>
+  <slot>set_short_cmts()</slot>
+  <slot>previous_cmts_page()</slot>
+  <slot>next_cmts_page()</slot>
+  <slot>choice_cmts_page()</slot>
+  <slot>open_in_browser()</slot>
+  <slot>set_choice_rank_next()</slot>
+  <slot>set_choice_rank_back()</slot>
+  <slot>pre_video_play()</slot>
+  <slot>go_page7_pre_video_show()</slot>
+  <slot>choice_pre_video()</slot>
+  <slot>back_cmts_to_page3()</slot>
+  <slot>back_mpl_to_page3()</slot>
+  <slot>back_video_to_page3()</slot>
+  <slot>pre_video_pause()</slot>
+  <slot>pre_video_continue()</slot>
+  <slot>word_cloud_choice()</slot>
+  <slot>add_user_words()</slot>
+  <slot>finish_user_words()</slot>
+  <slot>clear_user_words()</slot>
+ </slots>
+</ui>
