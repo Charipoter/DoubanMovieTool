@@ -1,5 +1,12 @@
 import threading
+
+from PyQt5 import QtWidgets
+from PyQt5.QtCore import QStringListModel
+from matplotlib.backends.backend_template import FigureCanvas
+from matplotlib.figure import Figure
+
 from head import *
+from main_window import Ui_Form
 
 
 class MyFigure(FigureCanvas, ):  # matplotlib画图类
